@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "870597539486",
+    "project_id": "cognyshoes",
+    "storage_bucket": "cognyshoes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870597539486:android:1b822defb6cdafb04a2d8f",
+        "android_client_info": {
+          "package_name": "Cogny.Hub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870597539486-mdljkmpd6c8o4b7jve42nnafia19odnc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH2XPR50gS3koLC1Gix4FBwNXWTd6WP2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870597539486-mdljkmpd6c8o4b7jve42nnafia19odnc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870597539486:android:f5735a8474c256bf4a2d8f",
+        "android_client_info": {
+          "package_name": "com.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870597539486-mdljkmpd6c8o4b7jve42nnafia19odnc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH2XPR50gS3koLC1Gix4FBwNXWTd6WP2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870597539486-mdljkmpd6c8o4b7jve42nnafia19odnc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
