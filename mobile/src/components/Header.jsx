@@ -1,9 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { useNavigate } from "react-router-native";
+
 
 const Header = () => {
+    const history = useNavigate();
     return (
         <View style={styles.header}>
+            <Text onPress={() => history("/")} style={styles.text}>Home</Text>
             <Text style={styles.text}>Carrinho</Text>
             <Text style={styles.text}>Meus Pedidos</Text>
         </View>

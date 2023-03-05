@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { useNavigate } from "react-router-native";
+import Context from "../../context/Context";
 
 const Products = ({ card }) => {
-    const { model, price, url_image } = card;
+    const { model, price, url_image, id } = card;
+    const { setDetails } = useContext(Context);
+
+    const history = useNavigate();
+
+    const pageChangeToDetails = () => {
+        console.log("chamou");
+        setDetails(card);
+        history(`/details/${id}`);
+    };
     return (
         <View style={styles.card}>
             <View style={styles.cardContent}>
                 <Text style={styles.title}>{model}</Text>
                 <Image source={{ uri: url_image }} style={styles.cardImage} />
                 <Text style={styles.title}>{`por R$${price}`}</Text>
-                <TouchableOpacity style={styles.button} onPress={() => console.log("Botão clicado!")}>
-                    <Text style={styles.buttonText}>Clique aqui</Text>
+                <TouchableOpacity style={styles.button} onPress={pageChangeToDetails}>
+                    <Text style={styles.buttonText}>Ver</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -21,6 +32,7 @@ const Products = ({ card }) => {
 Products.propTypes = {
     card: PropTypes.shape({
         model: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,
         url_image: PropTypes.string.isRequired,
     }).isRequired,
@@ -42,7 +54,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
     },
     card: {
-        borderRadius: 26,
+        borderRadius: 46,
         width: 376,
         elevation: 3,
         backgroundColor: "#fff",
