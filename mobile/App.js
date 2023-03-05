@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Footer from "./src/components/Footes";
 import Header from "./src/components/Header";
 import firestore from "@react-native-firebase/firestore";
@@ -14,29 +14,32 @@ export default function App() {
         await shoes.get().then(((querySnapshot) => 
             querySnapshot.forEach((documentSnapshot) => {
                 setCards((prev) => {
-                    console.log(prev);
                     if (prev && prev.length > 0) {
                         return prev.concat(documentSnapshot.data());
                     }
                     return [documentSnapshot.data()];
                 });
-            })));
+                
+            })), console.log(cards.length));
     });
 
     useEffect(() => {
-        console.log("chamou");
-        getShoes();
+        if (cards.length === 0) {
+            getShoes();
+        }
     },[]);
 
     return (
         <View style={styles.container}>
             <Header />
-            <Text>Teste 2</Text>
-            {cards && cards.length > 0 && 
+            <ScrollView style={{padding: 20, marginVertical: 50 }}>
+                <Text>Teste 2</Text>
+                {cards && cards.length > 0 && 
         cards.map((card, i) => {
             return <Products key={i} card={card} />;
         })
-            }
+                }
+            </ScrollView>
             <Footer/>
             <StatusBar style="auto" />
         </View>
@@ -46,7 +49,7 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
+        backgroundColor: "black",
         alignItems: "center",
         justifyContent: "center",
     },
